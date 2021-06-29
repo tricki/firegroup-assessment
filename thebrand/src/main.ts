@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { applyPolyfills, defineCustomElements } from 'fg-components/loader';
 import App from './App.vue'
-import './registerServiceWorker'
+// import './registerServiceWorker'
 import router from './router'
 
 const app = createApp(App).use(router);
