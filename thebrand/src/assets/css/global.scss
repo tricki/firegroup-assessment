@@ -1,0 +1,93 @@
+@import '~bootstrap/scss/bootstrap-grid';
+@import 'fonts';
+
+body {
+    margin: 0;
+    font-family: 'TradeGothic LT';
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'MinionProRegular';
+    font-weight: normal;
+    margin: 1rem 0 2rem;
+}
+
+h1 {
+    font-size: 4.2rem;
+    letter-spacing: .06rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: $color-primary;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.subtitle {
+    letter-spacing: .06rem;
+    color: $color-primary;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bg-alt {
+    background-color: $color-grey-light;
+}
+
+.bg-dark {
+    background-color: $color-grey-dark;
+}
+
+.main-section {
+    margin: 8rem 0;
+}
+
+.serif {
+    font-family: 'MinionProRegular';
+}
+
+button {
+    font-family: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+
+    border: 0;
+    padding: 1rem 2rem;
+    background: $color-primary;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($color-primary, 10);
+    }
+}
+
+p {
+    line-height: 1.5;
+    margin: 1.6rem 0;
+    letter-spacing: -.003rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    // &:last-child {
+    //     margin-bottom: 0;
+    // }
+}
+
+p.large {
+    font-size: 1.5rem;
+    color: $color-grey-medium;
+}

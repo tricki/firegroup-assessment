@@ -1,0 +1,64 @@
+fg-product-images {
+  display: block;
+
+  section {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  aside {
+    width: 23%;
+    margin-right: 12%;
+
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      width: 100%;
+      height: 6.5rem;
+      margin-bottom: .75rem;
+      cursor: pointer;
+
+      background-color: white;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(white, .7);
+        transition: opacity .2s;
+      }
+
+      &:hover::after {
+        opacity: .5;
+      }
+
+      &.is-current::after {
+        opacity: 0;
+      }
+    }
+  }
+
+  li,
+  .current {
+    background: center center no-repeat;
+    background-size: cover;
+  }
+
+  .current {
+    width: 78%;
+    // width: 20rem;
+    height: 34rem;
+  }
+}

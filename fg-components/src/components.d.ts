@@ -6,20 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-
+    interface FgProductImages {
+        "images": string[];
+    }
 }
 declare global {
+    interface HTMLFgProductImagesElement extends Components.FgProductImages, HTMLStencilElement {
+    }
+    var HTMLFgProductImagesElement: {
+        prototype: HTMLFgProductImagesElement;
+        new (): HTMLFgProductImagesElement;
+    };
     interface HTMLElementTagNameMap {
+        "fg-product-images": HTMLFgProductImagesElement;
     }
 }
 declare namespace LocalJSX {
+    interface FgProductImages {
+        "images"?: string[];
+    }
     interface IntrinsicElements {
+        "fg-product-images": FgProductImages;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "fg-product-images": LocalJSX.FgProductImages & JSXBase.HTMLAttributes<HTMLFgProductImagesElement>;
         }
     }
 }
