@@ -83,7 +83,7 @@
     <div class="main-section description">
       <div class="container">
         <div class="row">
-          <div class="col col-4">
+          <div class="col col-4 rel">
             <div class="img" :style="{ backgroundImage: `url(${images[2]})` }"></div>
             <div class="img img-floating" :style="{ backgroundImage: `url(${images[4]})` }"></div>
           </div>
@@ -125,7 +125,7 @@
             <h2 class="text-offset">Product Characteristics</h2>
             <PropertyList :items="specItems"></PropertyList>
           </div>
-          <div class="col col-4">
+          <div class="col col-4 rel">
             <div class="img" :style="{ backgroundImage: `url(${images[3]})` }"></div>
             <VideoThumb class="img img-floating" :thumbnail="images[5]">
               <img src="@/assets/icons/play.svg" />
@@ -274,7 +274,7 @@
 
     position: absolute;
     top: 9rem;
-    left: 14rem;
+    left: 13rem;
     width: 17rem;
   }
 }
@@ -292,15 +292,15 @@
     background-position: 66% 73%;
 
     position: absolute;
-    right: 2.5rem;
-    bottom: -6.5rem;
+    right: 1.9rem;
+    bottom: -6.2rem;
     width: 16rem;
     height: 11rem;
   }
 }
 
 .link-row--final {
-  margin-top: 14rem;
+  margin-top: 16rem;
 
   a {
     padding: 3.3rem 0 3.8rem;
