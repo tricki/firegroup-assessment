@@ -49,6 +49,7 @@ export default defineComponent({
     position: relative;
     z-index: 1;
     width: 4rem;
+    user-select: none;
   }
 }
 </style>
