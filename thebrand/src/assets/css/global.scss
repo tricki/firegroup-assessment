@@ -77,6 +77,20 @@ button {
     }
 }
 
+button.round {
+    background: transparent;
+    border: 2px solid #1e1e1e;
+    border-radius: 50%;
+    width: 6.5rem;
+    height: 6.5rem;
+
+    // transition: border-color .2s ease;
+
+    // &:hover {
+    //     border-color: #eaa25c;
+    // }
+}
+
 p {
     line-height: 1.5;
     margin: 1.6rem 0;

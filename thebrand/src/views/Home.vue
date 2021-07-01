@@ -154,6 +154,22 @@
       </div>
     </div>
 
+    <div class="product-slider">
+      <fg-product-slider fade :products="relatedProducts">
+        <div class="subtitle">
+          Altiplano Collection
+        </div>
+        <h3>
+          Related Pieces
+        </h3>
+
+        <button class="round">
+          <Icon name="arrow-left" />
+          Drag
+        </button>
+      </fg-product-slider>
+    </div>
+
   </div>
 </template>
 
@@ -316,6 +332,49 @@
     font-size: 1.3rem;
   }
 }
+
+.product-slider {
+  background-color: $color-darkest;
+  overflow: hidden;
+}
+
+fg-product-slider {
+  padding-top: 6rem;
+  padding-bottom: 7rem;
+
+  &::v-deep {
+
+    .row > .col:first-child {
+      margin-top: 5%;
+    }
+
+    .pagination {
+      font-size: 1.1rem;
+      margin-top: 2.7rem;
+      margin-left: 2.3rem;
+      color: $color-grey-medium;
+
+      .current {
+        color: white;
+      }
+    }
+
+    .subtitle,
+    small {
+      color: $color-grey-medium;
+    }
+  }
+
+  button.round .icon {
+    color: $color-primary;
+    margin-top: .5rem;
+    line-height: 2.3;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+}
 </style>
 
 <script lang="ts">
@@ -418,6 +477,71 @@ export default defineComponent({
           title: 'Water Resistance',
           text: '30 m / 02 ATM',
           icon: 'details',
+        },
+      ],
+      relatedProducts: [
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39112/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39112',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39113/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39113',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39114/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39114',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39112/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39115',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39113/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39116',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39114/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39117',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39112/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39118',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39113/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39119',
+        },
+        {
+          brand: 'Piaget',
+          name: 'Altiplano',
+          image: require('@/assets/products/GOA39114/main.png'),
+          price: 24900,
+          serial: 'Watch GOA39120',
         },
       ],
     };

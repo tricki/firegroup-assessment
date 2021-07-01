@@ -1,0 +1,76 @@
+@import '../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
+
+fg-product-slider {
+  display: flex;
+  // background-color: white;
+  color: white;
+
+  >.row {
+    width: 110%;
+
+    >.col:first-child {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &.faded {
+
+    >.row {
+      position: relative;
+      min-width: auto;
+      width: 120%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 20%;
+
+        background-image: linear-gradient(to left, #0f0f0f 0%, rgba(#0f0f0f, .5) 80%, rgba(#0f0f0f, 0) 100%);
+      }
+    }
+  }
+
+  img {
+    height: 15rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: .9rem;
+  }
+
+  h4 {
+    font-size: 2.2rem;
+    line-height: 1;
+    margin: .8rem 0 .3rem;
+  }
+
+  small {
+    font-size: .7rem;
+  }
+
+  .price {
+    margin-top: 1.4rem;
+    font-size: 1.1rem;
+  }
+
+  .splide__slide {
+    padding: 0 3rem 3rem;
+    text-align: center;
+
+    &::before {
+      content: "";
+      background-color: black;
+      position: absolute;
+      top: 10%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+}
