@@ -1,6 +1,6 @@
 <template>
   <div class="social-icons">
-    <a v-for="item in socials" :key="item.title" :href="item.url" class="social-icon" :title="item.title">
+    <a v-for="item in socials" :key="item.title" :href="item.url" target="_blank" class="social-icon" :title="item.title">
       <Icon :name="item.icon" />
     </a>
   </div>
