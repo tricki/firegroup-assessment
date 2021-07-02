@@ -37,8 +37,8 @@
 
       <div class="container">
         <div class="row g-0 link-row">
-          <div class="col col-5">
-            <a href="#" class="show-details">
+          <div class="col col-5 show-details">
+            <a href="#">
               <Icon name="arrow-down" />
               Show Product Details
             </a>
@@ -180,17 +180,21 @@
   }
 
   .link-row {
+    background-color: $color-dark;
 
     a {
-      background: $color-dark;
       line-height: 1;
 
+      &:hover {
+        background-color: $color-grey-dark-alt;
+      }
+
       &:first-child {
-        padding-left: 5rem;
+        margin-left: 5rem;
       }
 
       &:last-child {
-        padding-right: 4rem;
+        margin-right: 4rem;
       }
     }
 
@@ -200,11 +204,19 @@
     }
 
     .show-details {
-      display: block;
-      background: white;
-      color: black;
-      padding-left: 0;
-      padding-right: 0;
+      background-color: white;
+
+      a {
+        display: block;
+        background: white;
+        color: black;
+        margin-left: 0;
+        margin-right: 0;
+
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
 
       .icon {
         color: $color-primary;
@@ -324,6 +336,10 @@
 
     &:nth-child(2) {
       background-color: $color-grey-dark-alt;
+    }
+
+    &:hover {
+      background-color: $color-dark;
     }
   }
 
