@@ -37,6 +37,14 @@ export class FgProductSlider implements ComponentInterface {
       gap: '1rem',
       arrows: false,
       pagination: false,
+      breakpoints: {
+        1200: {
+          perPage: 3,
+        },
+        1000: {
+          perPage: 2,
+        },
+      },
     }).mount();
 
     this.splide.on('active', () => {
@@ -56,7 +64,7 @@ export class FgProductSlider implements ComponentInterface {
       }}>
         <div class="row g-0">
 
-          <div class="col col-3">
+          <div class="col col-12 col-md-3">
             <div>
               <slot />
 
@@ -68,7 +76,7 @@ export class FgProductSlider implements ComponentInterface {
             </div>
           </div>
 
-          <div class="splide col col-9" ref={el => this.elSplide = el}>
+          <div class="splide col col-12 col-md-9" ref={el => this.elSplide = el}>
             <div class="splide__track">
               <div class="splide__list">
                 {this.products.map(product => (

@@ -1,46 +1,31 @@
 <template>
+  <MainMenuOverlay ref="mainMenuOverlay" />
   <div class="container">
-    <div class="quickbar">
-      <div class="left">
-        <a href="/contact" title="Contact"><Icon name="contact"></Icon></a>
-        <a href="/stores" title="Stores"><Icon name="stores"></Icon></a>
-        <a href="/#" title="Language"><Icon name="language"></Icon></a>
-      </div>
-      <div class="right">
-        <a href="/cart" title="Cart"><Icon name="bag"></Icon></a>
-        <a href="/wishlist" title="Wishlist"><Icon name="wishlist"></Icon></a>
-        <a href="/login" title="Login"><Icon name="login"></Icon></a>
-        <a href="/search" title="Search"><Icon name="search"></Icon></a>
+    <div class="row">
+      <div class="col col-12">
+        <div class="quickbar">
+          <div class="left">
+            <a href="/contact" title="Contact"><Icon name="contact"></Icon></a>
+            <a href="/stores" title="Stores"><Icon name="stores"></Icon></a>
+            <a href="/#" title="Language"><Icon name="language"></Icon></a>
+          </div>
+          <div class="right">
+            <a href="/cart" title="Cart"><Icon name="bag"></Icon></a>
+            <a href="/wishlist" title="Wishlist"><Icon name="wishlist"></Icon></a>
+            <a href="/login" title="Login"><Icon name="login"></Icon></a>
+            <a href="/search" title="Search"><Icon name="search"></Icon></a>
+          </div>
+        </div>
+        <MainMenu middle-logo />
+        <div class="logo-bar">
+          <a href="/" class="logo">The Brand</a>
+          <a href="#menu" class="toggle-menu" @click.prevent="$refs.mainMenuOverlay.toggle()" title="Open Menu"></a>
+        </div>
       </div>
     </div>
-    <nav class="main-menu">
-      <ol>
-        <li>
-          <a href="/watches">Watches</a>
-        </li>
-        <li>
-          <a href="/jewellery">Jewellery</a>
-        </li>
-        <li>
-          <a href="/wedding">Wedding</a>
-        </li>
-        <li>
-          <a href="/" class="logo">The Brand</a>
-        </li>
-        <li>
-          <a href="/academy">Academy</a>
-        </li>
-        <li>
-          <a href="/company">Company</a>
-        </li>
-        <li>
-          <a href="/stores">Stores</a>
-        </li>
-      </ol>
-    </nav>
   </div>
   <div class="breadcrumbs">
-    <div class="container">
+    <div class="container g-0">
       <a href="#">Home</a>
       <span class="sep">/</span>
       <a href="#">Watches</a>
@@ -59,6 +44,47 @@
 </template>
 
 <style lang="scss">
+.logo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+
+  .toggle-menu {
+    position: absolute;
+    right: 1rem;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.2rem;
+    border-top: .2em solid black;
+    border-bottom: .2em solid black;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: .3em;
+      left: 0;
+      width: 100%;
+      border-top: .2em solid black;
+    }
+  }
+}
+
+
+.main-menu {
+
+  @include media-breakpoint-down(md) {
+
+    &.middleLogo {
+      display: none;
+    }
+  }
+}
+
 .quickbar {
   display: flex;
   justify-content: space-between;
@@ -74,6 +100,10 @@
     margin-right: 1.7em;
     color: black;
 
+    &:hover {
+      color: $color-primary;
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -81,38 +111,6 @@
 
   .icon > svg {
     width: auto;
-  }
-}
-
-.main-menu {
-  font-family: 'MinionProRegular', 'Times New Roman', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-bottom: 2em;
-
-  ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    text-transform: uppercase;
-  }
-
-  a {
-    color: black;
-
-    font-weight: bold;
-    font-size: .9rem;
-    letter-spacing: 1.3px;
-  }
-
-  .logo {
-    font-size: 2rem;
-    letter-spacing: 5px;
   }
 }
 
@@ -141,11 +139,20 @@
 </style>
 
 <script lang="ts">
+import MainMenu from '@/components/MainMenu.vue';
+import MainMenuOverlay from '@/components/MainMenuOverlay.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   components: {
+    MainMenu,
+    MainMenuOverlay,
     AppFooter,
+  },
+  data() {
+    return {
+      isMainMenuOpen: false,
+    };
   },
 };
 </script>

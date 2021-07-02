@@ -2,18 +2,18 @@
   <div class="page">
     <div class="overview bg-alt">
       <div class="container">
-        <div class="row g-0">
-          <div class="col col-5">
-            <fg-product-images :images="slideshowImages"></fg-product-images>
+        <div class="row g-lg-0">
+          <div class="col col-12 col-md-5 order-2 order-md-1">
+            <ProductImages :images="slideshowImages" />
           </div>
-          <div class="col col-6 offset-1">
+          <div class="col col-12 col-md-7 col-lg-6 offset-lg-1 order-1 order-md-2">
             <div class="subtitle">
               Piaget Watches
             </div>
             <h1>
               Piaget Altiplano Ultimate 910P
             </h1>
-            <div class="offset-2">
+            <div class="offset-lg-2">
               <div class="price subtitle serif">
                 CHF 35'700.00
               </div>
@@ -27,7 +27,7 @@
                   hand-wound mechanical movement.
                 </p>
                 <p>
-                  <button type="button">Add to shopping bag</button>
+                  <button class="anim" type="button">Add to shopping bag</button>
                 </p>
               </div>
             </div>
@@ -37,13 +37,13 @@
 
       <div class="container">
         <div class="row g-0 link-row">
-          <div class="col col-5 show-details">
+          <div class="col col-md-5 show-details">
             <a href="#">
               <Icon name="arrow-down" />
               Show Product Details
             </a>
           </div>
-          <div class="col col-7">
+          <div class="col col-md-7">
             <a href="#">
               <Icon name="share" />
               Share
@@ -68,12 +68,12 @@
     <div class="main-section details">
       <div class="container">
         <div class="row">
-          <div class="col col-8 mt-3">
+          <div class="col col-12 col-md-8 mt-md-3">
             <div class="subtitle text-offset">Product Details</div>
             <h2 class="text-offset">Piaget Altiplano Ultimate 910P</h2>
             <PropertyList :items="detailItems"></PropertyList>
           </div>
-          <div class="col col-4">
+          <div class="col col-12 col-md-4">
             <div class="img" :style="{ backgroundImage: `url(${images[1]})` }"></div>
           </div>
         </div>
@@ -83,14 +83,14 @@
     <div class="main-section description">
       <div class="container">
         <div class="row">
-          <div class="col col-4 rel">
+          <div class="col col-12 col-md-4 rel">
             <div class="img" :style="{ backgroundImage: `url(${images[2]})` }"></div>
             <div class="img img-floating" :style="{ backgroundImage: `url(${images[4]})` }"></div>
           </div>
-          <div class="col col-6 offset-1">
+          <div class="col col-12 col-md-6 offset-md-1">
             <div class="subtitle">Product Description</div>
             <h2>The world's thinnest Automatic Watch</h2>
-            <div class="col offset-2">
+            <div class="col offset-md-2">
               <p class="serif large">
                 The thinnest hand-wound mechanical watches
                 in the world. Manufacture Piaget 910P ultra-thin,
@@ -109,7 +109,7 @@
                 reigns supreme, this luxury watch symbolises all the excelence.
               </p>
               <p>
-                <button type="button">Add to shopping bag</button>
+                <button class="anim" type="button">Add to shopping bag</button>
               </p>
             </div>
           </div>
@@ -120,12 +120,12 @@
     <div class="main-section specs">
       <div class="container">
         <div class="row">
-          <div class="col col-8 mt-3">
+          <div class="col col-12 col-md-8 mt-3">
             <div class="subtitle text-offset">Specifications</div>
             <h2 class="text-offset">Product Characteristics</h2>
             <PropertyList :items="specItems"></PropertyList>
           </div>
-          <div class="col col-4 rel">
+          <div class="col col-12 col-md-4 rel">
             <div class="img" :style="{ backgroundImage: `url(${images[3]})` }"></div>
             <VideoThumb class="img img-floating" :thumbnail="images[5]">
               <img src="@/assets/icons/play.svg" />
@@ -138,15 +138,15 @@
     <div class="bg-dark">
       <div class="container">
         <div class="row link-row link-row--final">
-          <a href="#" class="col col-4">
+          <a href="#" class="col col-md-4">
             <Icon name="arrow-up" />
             Close Product Details
           </a>
-          <a href="#" class="col col-4">
+          <a href="#" class="col col-md-4">
             <Icon name="bag" />
             Add to the Shopping Bag
           </a>
-          <a href="#" class="col col-4">
+          <a href="#" class="col col-md-4">
             <Icon name="enquiry" />
             Make an Enquiry
           </a>
@@ -176,7 +176,8 @@
 <style lang="scss" scoped>
 .overview {
   > .container:first-child {
-    padding: 6.5rem 0;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
   }
 
   .link-row {
@@ -189,12 +190,15 @@
         background-color: $color-grey-dark-alt;
       }
 
-      &:first-child {
-        margin-left: 5rem;
-      }
+      @include media-breakpoint-up(lg) {
 
-      &:last-child {
-        margin-right: 4rem;
+        &:first-child {
+          margin-left: 5rem;
+        }
+
+        &:last-child {
+          margin-right: 4rem;
+        }
       }
     }
 
@@ -244,8 +248,16 @@
   text-align: center;
   text-transform: uppercase;
 
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
   > div:last-child {
     display: flex;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
   }
 
   a {
@@ -290,6 +302,12 @@
 .description {
   position: relative;
 
+  @include media-breakpoint-down(md) {
+    .col:nth-child(2) {
+      margin-top: 3rem;
+    }
+  }
+
   .img {
     height: 27rem;
     background-size: 80rem;
@@ -304,6 +322,13 @@
     top: 9rem;
     left: 13rem;
     width: 17rem;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .img-floating {
+    // TODO find better solution
+    display: none;
   }
 }
 
@@ -395,10 +420,12 @@ fg-product-slider {
 <script lang="ts">
 import { defineComponent } from 'vue';
 import PropertyList from '@/components/PropertyList.vue';
+import ProductImages from '@/components/ProductImages.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
+    ProductImages,
     PropertyList,
   },
   computed: {

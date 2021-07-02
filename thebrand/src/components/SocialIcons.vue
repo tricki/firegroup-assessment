@@ -53,6 +53,7 @@ export default defineComponent({
   width: 2.8rem;
   height: 2.8rem;
   margin-right: .5rem;
+  margin-bottom: .5rem;
 
   background-color: $color-grey-light;
   color: black;

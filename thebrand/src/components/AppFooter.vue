@@ -1,7 +1,7 @@
 <template>
   <footer class="container">
     <div class="row">
-      <div class="col col-3">
+      <div class="col col-12 col-sm-6 col-md-3">
         <address>
           <p>
             <span class="brand serif">
@@ -26,7 +26,7 @@
           </table>
         </address>
       </div>
-      <div class="col col-3">
+      <div class="col col-12 col-sm-6 col-md-3">
         <h5>Customer Care</h5>
         <ol class="links">
           <li>
@@ -76,7 +76,7 @@
           </li>
         </ol>
       </div>
-      <div class="col col-3">
+      <div class="col col-12 col-sm-6 col-md-3">
         <h5>Our Company</h5>
         <ol class="links">
           <li>
@@ -124,7 +124,7 @@
           </li>
         </ol>
       </div>
-      <div class="col col-3">
+      <div class="col col-12 col-sm-6 col-md-3">
         <h5>Stay in Touch</h5>
         <ol class="links">
           <li>
@@ -174,7 +174,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 footer {
-  padding: 5rem 0;
+  padding-top: 5rem;
   font-size: .9rem;
   line-height: 1.4;
   letter-spacing: -.03rem;

@@ -45,6 +45,10 @@ export default defineComponent({
   font-size: .9rem;
   line-height: 1;
   margin: 3rem 0;
+
+  @include media-breakpoint-down(md) {
+    max-height: none !important;
+  }
 }
 
 .property {
@@ -53,6 +57,11 @@ export default defineComponent({
   flex: 0 1;
   width: calc(50% - 3rem);
   position: relative;
+  white-space: nowrap;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
 
   &::after {
     content: "";
@@ -71,6 +80,10 @@ export default defineComponent({
   color: $color-primary;
   float: left;
   margin-right: 2.65rem;
+
+  @include media-breakpoint-down(lg) {
+    margin-right: 1rem;
+  }
 }
 
 .title {
