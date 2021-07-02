@@ -141,6 +141,17 @@
         <SocialIcons />
       </div>
     </div>
+    <div class="row socket">
+      <div class="col">
+        &copy; 2018 The Brand
+      </div>
+      <div class="col right">
+        <a href="#top" @click.prevent="scrollToTop">
+          Back to top
+          <Icon name="arrow-up" />
+        </a>
+      </div>
+    </div>
   </footer>
 </template>
 
@@ -152,6 +163,11 @@ export default defineComponent({
   name: 'AppFooter',
   components: {
     SocialIcons,
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
   },
 });
 </script>
@@ -204,10 +220,29 @@ address {
   margin-top: 11px;
   display: inline-block;
   text-transform: uppercase;
-  letter-spacing: 0.165rem;
+  letter-spacing: .165rem;
 }
 
 .social-icons {
   margin-top: 3.5rem;
+}
+
+.socket {
+  border-top: 1px solid #DCDCDC;
+  padding: 2rem 0;
+  margin-top: 2rem;
+
+  *,
+  a {
+    color: #DCDCDC;
+  }
+
+  .icon {
+    vertical-align: middle;
+  }
+
+  .right {
+    text-align: right;
+  }
 }
 </style>
