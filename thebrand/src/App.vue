@@ -16,25 +16,25 @@
     <nav class="main-menu">
       <ol>
         <li>
-          <router-link to="/watches">Watches</router-link>
+          <a href="/watches">Watches</a>
         </li>
         <li>
-          <router-link to="/jewellery">Jewellery</router-link>
+          <a href="/jewellery">Jewellery</a>
         </li>
         <li>
-          <router-link to="/wedding">Wedding</router-link>
+          <a href="/wedding">Wedding</a>
         </li>
         <li>
-          <router-link to="/" class="logo">The Brand</router-link>
+          <a href="/" class="logo">The Brand</a>
         </li>
         <li>
-          <router-link to="/academy">Academy</router-link>
+          <a href="/academy">Academy</a>
         </li>
         <li>
-          <router-link to="/company">Company</router-link>
+          <a href="/company">Company</a>
         </li>
         <li>
-          <router-link to="/stores">Stores</router-link>
+          <a href="/stores">Stores</a>
         </li>
       </ol>
     </nav>
