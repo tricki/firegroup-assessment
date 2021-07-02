@@ -18,6 +18,11 @@ export class FgProductSlider implements ComponentInterface {
   @Watch('fade')
   fadeChanged() {
     this.splide.options.perPage = this.getItemsPerPage();
+    setTimeout(() => {
+      // let the browser recalculate layout before
+      // Splide recalculates item width
+      this.splide.refresh();
+    }, 0);
   }
 
   @State() currentIndex = 0;
@@ -32,7 +37,6 @@ export class FgProductSlider implements ComponentInterface {
       gap: '1rem',
       arrows: false,
       pagination: false,
-      // width:
     }).mount();
 
     this.splide.on('active', () => {

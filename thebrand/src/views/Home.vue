@@ -367,7 +367,6 @@ fg-product-slider {
 
   button.round .icon {
     color: $color-primary;
-    margin-top: .5rem;
     line-height: 2.3;
   }
 
