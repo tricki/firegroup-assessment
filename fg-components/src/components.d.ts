@@ -40,6 +40,7 @@ declare namespace LocalJSX {
     }
     interface FgProductSlider {
         "fade"?: boolean;
+        "onSlideClick"?: (event: CustomEvent<{originalEvent: MouseEvent, product: ISliderProduct}>) => void;
         "products"?: ISliderProduct[];
     }
     interface IntrinsicElements {

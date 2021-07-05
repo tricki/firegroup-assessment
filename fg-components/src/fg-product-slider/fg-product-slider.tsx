@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import Splide from '@splidejs/splide';
 
 import { formatCurrency } from '../utils/formatCurrency';
@@ -26,6 +26,8 @@ export class FgProductSlider implements ComponentInterface {
   }
 
   @State() currentIndex = 0;
+
+  @Event() slideClick: EventEmitter<{originalEvent: MouseEvent, product: ISliderProduct}>;
 
   @Method()
   async goTo(target: number | string): Promise<void> {
@@ -62,6 +64,13 @@ export class FgProductSlider implements ComponentInterface {
     return this.fade ? 4 : 3;
   }
 
+  onSlideClick(e: MouseEvent, product: ISliderProduct) {
+    this.slideClick.emit({
+      originalEvent: e,
+      product: product,
+    });
+  }
+
   render() {
     return (
       <Host class={{
@@ -86,7 +95,7 @@ export class FgProductSlider implements ComponentInterface {
             <div class="splide__track">
               <div class="splide__list">
                 {this.products.map(product => (
-                  <section class="splide__slide">
+                  <section class="splide__slide" onClick={e => this.onSlideClick(e, product)}>
                     <img src={product.image} />
                     <div class="subtitle">{product.brand}</div>
                     <h4>{product.name}</h4>

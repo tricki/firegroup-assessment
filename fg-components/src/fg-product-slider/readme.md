@@ -13,6 +13,13 @@
 | `products` | --        |             | `ISliderProduct[]` | `[]`    |
 
 
+## Events
+
+| Event        | Description | Type                                                                   |
+| ------------ | ----------- | ---------------------------------------------------------------------- |
+| `slideClick` |             | `CustomEvent<{ originalEvent: MouseEvent; product: ISliderProduct; }>` |
+
+
 ## Methods
 
 ### `goTo(target: number | string) => Promise<void>`
