@@ -407,6 +407,13 @@ fg-product-slider {
     small {
       color: $color-grey-medium;
     }
+
+    .splide__slide {
+
+      @include media-breakpoint-down(lg) {
+        padding: 0 1.5rem 1.5rem;
+      }
+    }
   }
 
   button.round .icon {
