@@ -38,7 +38,7 @@
       <div class="container">
         <div class="row g-0 link-row">
           <div class="col col-md-5 show-details">
-            <a href="#">
+            <a href="#product-details">
               <Icon name="arrow-down" />
               Show Product Details
             </a>
@@ -65,6 +65,7 @@
       </div>
     </div>
 
+    <a name="product-details"></a>
     <div class="main-section details">
       <div class="container">
         <div class="row">
@@ -138,7 +139,7 @@
     <div class="bg-dark">
       <div class="container">
         <div class="row link-row link-row--final">
-          <a href="#" class="col col-md-4">
+          <a href="#top" class="col col-md-4">
             <Icon name="arrow-up" />
             Close Product Details
           </a>
