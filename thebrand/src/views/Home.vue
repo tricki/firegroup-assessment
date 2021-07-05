@@ -398,6 +398,10 @@ fg-product-slider {
       margin-left: 2.3rem;
       color: $color-grey-medium;
 
+      @include media-breakpoint-down(md) {
+        margin-bottom: 2rem;
+      }
+
       .current {
         color: white;
       }
