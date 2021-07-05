@@ -44,19 +44,19 @@
             </a>
           </div>
           <div class="col col-md-7">
-            <a href="#">
+            <a href="#n">
               <Icon name="share" />
               Share
             </a>
-            <a href="#">
+            <a href="#n">
               <Icon name="wishlist" />
               Wish List
             </a>
-            <a href="#">
+            <a href="#n">
               <Icon name="search" />
               Compare
             </a>
-            <a href="#">
+            <a href="#n">
               <Icon name="enquiry" />
               Enquire
             </a>
@@ -143,11 +143,11 @@
             <Icon name="arrow-up" />
             Close Product Details
           </a>
-          <a href="#" class="col col-md-4">
+          <a href="#n" class="col col-md-4">
             <Icon name="bag" />
             Add to the Shopping Bag
           </a>
-          <a href="#" class="col col-md-4">
+          <a href="#n" class="col col-md-4">
             <Icon name="enquiry" />
             Make an Enquiry
           </a>

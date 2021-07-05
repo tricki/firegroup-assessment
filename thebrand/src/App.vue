@@ -7,7 +7,7 @@
           <div class="left">
             <a href="/contact" title="Contact"><Icon name="contact"></Icon></a>
             <a href="/stores" title="Stores"><Icon name="stores"></Icon></a>
-            <a href="/#" title="Language"><Icon name="language"></Icon></a>
+            <a href="/#n" title="Language"><Icon name="language"></Icon></a>
           </div>
           <div class="right">
             <a href="/cart" title="Cart"><Icon name="bag"></Icon></a>
@@ -26,13 +26,13 @@
   </div>
   <div class="breadcrumbs">
     <div class="container g-0">
-      <a href="#">Home</a>
+      <a href="#n">Home</a>
       <span class="sep">/</span>
-      <a href="#">Watches</a>
+      <a href="#n">Watches</a>
       <span class="sep">/</span>
-      <a href="#">Men's Watches</a>
+      <a href="#n">Men's Watches</a>
       <span class="sep">/</span>
-      <a href="#">Piaget</a>
+      <a href="#n">Piaget</a>
       <span class="sep">/</span>
       <span class="current">Piaget Altiplano Ultimate 910P</span>
     </div>
