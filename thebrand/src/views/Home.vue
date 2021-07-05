@@ -156,7 +156,7 @@
     </div>
 
     <div class="product-slider">
-      <fg-product-slider fade :products="relatedProducts">
+      <fg-product-slider fade :products="relatedProducts" ref="productSlider">
         <div class="subtitle">
           Altiplano Collection
         </div>
@@ -164,7 +164,7 @@
           Related Pieces
         </h3>
 
-        <button class="round">
+        <button class="round" @click.prevent="$refs.productSlider.goTo('>')">
           <Icon name="arrow-left" />
           Drag
         </button>

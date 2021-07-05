@@ -13,6 +13,19 @@
 | `products` | --        |             | `ISliderProduct[]` | `[]`    |
 
 
+## Methods
+
+### `goTo(target: number | string) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

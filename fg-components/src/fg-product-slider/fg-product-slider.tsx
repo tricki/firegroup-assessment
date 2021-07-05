@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, ComponentInterface, h, Host, Method, Prop, State, Watch } from '@stencil/core';
 import Splide from '@splidejs/splide';
 
 import { formatCurrency } from '../utils/formatCurrency';
@@ -27,6 +27,11 @@ export class FgProductSlider implements ComponentInterface {
 
   @State() currentIndex = 0;
 
+  @Method()
+  async goTo(target: number | string): Promise<void> {
+    this.splide.go(target);
+  }
+
   componentDidLoad() {
     this.initSlider();
   }
@@ -37,6 +42,7 @@ export class FgProductSlider implements ComponentInterface {
       gap: '1rem',
       arrows: false,
       pagination: false,
+      rewind: true,
       breakpoints: {
         1200: {
           perPage: 3,

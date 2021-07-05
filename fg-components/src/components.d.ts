@@ -12,6 +12,7 @@ export namespace Components {
     }
     interface FgProductSlider {
         "fade": boolean;
+        "goTo": (target: number | string) => Promise<void>;
         "products": ISliderProduct[];
     }
 }
