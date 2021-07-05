@@ -11,6 +11,11 @@ module.exports = {
           },
       },
   },
+  pwa: {
+    name: 'The Brand',
+    themeColor: '#caa25c',
+    msTileColor: '#ffffff',
+  },
   // ignore Stencil web components
   chainWebpack: config => {
     config.module
