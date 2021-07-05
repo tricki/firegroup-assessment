@@ -34,13 +34,19 @@ fg-product-images {
 
       > ol {
         display: flex;
+        justify-content: stretch;
       }
 
       li {
+        flex-grow: 1;
         width: 6rem;
         height: 6rem;
         margin-bottom: 0;
-        margin-right: 0.75rem;
+        margin-right: .75rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
