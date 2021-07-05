@@ -149,10 +149,5 @@ export default {
     MainMenuOverlay,
     AppFooter,
   },
-  data() {
-    return {
-      isMainMenuOpen: false,
-    };
-  },
 };
 </script>
