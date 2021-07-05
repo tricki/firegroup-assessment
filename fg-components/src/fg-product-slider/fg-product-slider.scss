@@ -2,7 +2,6 @@
 
 fg-product-slider {
   display: flex;
-  // background-color: white;
   color: white;
 
   >.row {
@@ -30,6 +29,13 @@ fg-product-slider {
         pointer-events: none;
 
         background-image: linear-gradient(to left, #0f0f0f 0%, rgba(#0f0f0f, .5) 70%, rgba(#0f0f0f, 0) 100%);
+      }
+    }
+
+    .splide__slide {
+
+      &.hidden {
+        visibility: hidden;
       }
     }
   }

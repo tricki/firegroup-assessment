@@ -88,6 +88,7 @@ export class FgProductSlider implements ComponentInterface {
                     <div class="price serif">{formatCurrency(product.price)}</div>
                   </section>
                 ))}
+                {this.fade && (<section class="splide__slide hidden"></section>)}
               </div>
             </div>
           </div>
