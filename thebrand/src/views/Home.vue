@@ -296,6 +296,8 @@
   background: $color-dark top center no-repeat;
   width: 100%;
   height: 100%;
+  // size ususally set by parent row, but not in mobile mode
+  min-height: 20rem;
   background-size: 25rem;
 }
 
