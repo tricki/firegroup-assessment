@@ -143,7 +143,7 @@
     </div>
     <div class="row socket">
       <div class="col">
-        &copy; 2018 The Brand
+        &copy; Copyright 2018 The Brand
       </div>
       <div class="col right">
         <a href="#top" @click.prevent="scrollToTop">
@@ -185,7 +185,7 @@ h5 {
   font-size: .9rem;
   letter-spacing: .08rem;
   margin-top: 1rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
 }
 
 .links {
@@ -234,7 +234,7 @@ address {
 
   *,
   a {
-    color: #DCDCDC;
+    color: $color-grey-medium;
   }
 
   .icon {
