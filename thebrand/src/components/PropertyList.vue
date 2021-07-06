@@ -1,10 +1,11 @@
 <template>
-  <div class="properties" :style="{maxHeight: maxHeight}">
-    <div class="property" v-for="item in items" :key="item.title">
-      <!-- <img :src="item.icon" /> -->
-      <Icon :name="item.icon" />
-      <div class="title serif">{{ item.title }}</div>
-      <div class="text">{{ item.text }}</div>
+  <div class="properties">
+    <div class="column" v-for="(column, index) in columns" :key="index">
+      <div class="property" v-for="item in column" :key="item.title">
+        <Icon :name="item.icon" />
+        <div class="title serif">{{ item.title }}</div>
+        <div class="text">{{ item.text }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,12 +25,25 @@ export default defineComponent({
     items: Array as PropType<PropertyListItem[]>,
   },
   computed: {
-    maxHeight(): string {
+    itemsPerColumn(): number {
       if (!this.items) {
-        return 'auto';
+        return 0;
       }
 
-      return 4 * Math.ceil(this.items.length / 2) + 'rem';
+      return Math.ceil(this.items.length / 2);
+    },
+    columns(): [Array<PropertyListItem>, Array<PropertyListItem>] {
+      const initial: [Array<PropertyListItem>, Array<PropertyListItem>] = [[], []];
+
+      if (!this.items) {
+        return initial;
+      }
+
+      // separate the items into 2 columns
+      return this.items.reduce((acc, item: PropertyListItem, i: number) => {
+        acc[i < this.itemsPerColumn ? 0 : 1].push(item);
+        return acc;
+      }, initial);
     },
   },
 });
@@ -38,30 +52,29 @@ export default defineComponent({
 <style scoped lang="scss">
 .properties {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 12rem;
 
   font-size: .9rem;
   line-height: 1;
   margin: 3rem 0;
 
-  @include media-breakpoint-down(md) {
-    max-height: none !important;
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+  }
+}
+
+.column {
+  flex: 1 0 50%;
+
+  // always remove border on last item in last column
+  &:last-child :last-child::after {
+    border-bottom: 0;
   }
 }
 
 .property {
   padding: .9rem 1.5rem;
-  display: inline-block;
-  flex: 0 1;
-  width: calc(50% - 3rem);
   position: relative;
   white-space: nowrap;
-
-  @include media-breakpoint-down(md) {
-    width: 100%;
-  }
 
   &::after {
     content: "";
@@ -73,6 +86,13 @@ export default defineComponent({
     border-bottom: 1px solid $color-grey-light;
     width: 16rem;
   }
+
+  // remove border on last item in column (if not wrapped)
+  @include media-breakpoint-up(sm) {
+    &:last-child::after {
+      border-bottom: 0;
+    }
+  }
 }
 
 .icon {
@@ -82,7 +102,7 @@ export default defineComponent({
   margin-right: 2.65rem;
 
   @include media-breakpoint-down(lg) {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
   }
 }
 
