@@ -233,6 +233,7 @@
 .price {
   color: $color-primary;
   font-size: 1.5rem;
+  font-weight: normal;
   line-height: 1;
   text-transform: uppercase;
   margin-bottom: 1.9rem;
@@ -407,15 +408,15 @@ fg-product-slider {
       }
     }
 
-    .subtitle,
-    small {
-      color: $color-grey-medium;
-    }
-
     .splide__slide {
 
       @include media-breakpoint-down(lg) {
         padding: 0 1.5rem 1.5rem;
+      }
+
+      .subtitle,
+      small {
+        color: $color-grey-medium;
       }
     }
   }

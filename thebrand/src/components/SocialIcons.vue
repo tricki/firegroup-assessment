@@ -50,6 +50,7 @@ export default defineComponent({
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.1rem;
   width: 2.8rem;
   height: 2.8rem;
   margin-right: .5rem;
