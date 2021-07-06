@@ -1,5 +1,7 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 
+import openSVG from './assets/open.svg?format=text';
+
 @Component({
   tag: 'fg-product-images',
   styleUrl: 'fg-product-images.scss',
@@ -37,7 +39,9 @@ export class FgProductImages {
             ))}
           </ol>
         </aside>
-        <div class="current" style={{ backgroundImage: `url(${this.currentImage})` }} />
+        <div class="current" style={{ backgroundImage: `url(${this.currentImage})` }}>
+          <a class="open" title="Open image in new window" href={this.currentImage} target="_blank" innerHTML={openSVG}></a>
+        </div>
       </section>
     );
   }
