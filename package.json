@@ -1,0 +1,27 @@
+{
+  "name": "firegroup-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "-",
+  "scripts": {
+    "start": "npm run install && npm run build.fg && npm run start.vue",
+    "start.vue": "cd ./thebrand/ && npm run serve",
+    "install": "npm run install.fg && npm run install.vue",
+    "install.fg": "cd ./fg-components && npm i",
+    "install.vue": "cd ./thebrand && npm i",
+    "build": "npm run build.fg && npm run build.vue",
+    "build.fg": "cd ./fg-components && npm run build",
+    "build.vue": "cd ./thebrand && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tricki/firegroup-assessment.git"
+  },
+  "author": "Thomas Rickenbach <thomasrickenbach@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tricki/firegroup-assessment/issues"
+  },
+  "homepage": "https://github.com/tricki/firegroup-assessment#readme"
+}
