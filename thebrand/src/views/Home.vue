@@ -297,9 +297,12 @@
 .img {
   background: $color-dark top center no-repeat;
   width: 100%;
-  // size ususally set by parent row, but not in mobile mode
-  min-height: 20rem;
   background-size: 25rem;
+
+  @include media-breakpoint-down(md) {
+    // size ususally set by parent row, but not in mobile mode
+    min-height: 20rem;
+  }
 
   @include media-breakpoint-up(md) {
     height: 100%;
@@ -337,8 +340,23 @@
 
     @include media-breakpoint-up(md) {
       top: 9rem;
-      left: 13rem;
+      left: 5rem;
+      width: 15rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      top: 9rem;
+      left: 9rem;
       width: 17rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: 7rem;
+      left: 13rem;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      left: 18rem;
     }
   }
 }
@@ -357,15 +375,22 @@
     height: 11rem;
 
     @include media-breakpoint-up(md) {
-      right: 1.9rem;
+      right: -.5rem;
       bottom: -6.2rem;
       width: 16rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      right: 1.9rem;
     }
   }
 }
 
 .link-row--final {
-  margin-top: 16rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 16rem;
+  }
 
   a {
     padding: 3.3rem 0 3.8rem;

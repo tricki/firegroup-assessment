@@ -78,6 +78,10 @@ body .logo {
 
 .main-section {
     margin: 8rem 0;
+
+    @include media-breakpoint-down(md) {
+        margin: 4rem 0;
+    }
 }
 
 .serif {
