@@ -109,6 +109,10 @@ button {
         background-color: darken($color-primary, 10);
     }
 
+    &:active {
+        background-color: darken($color-primary, 20);
+    }
+
     &.anim {
         position: relative;
         overflow: hidden;

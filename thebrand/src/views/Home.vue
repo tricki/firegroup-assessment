@@ -191,6 +191,10 @@
         background-color: $color-grey-dark-alt;
       }
 
+      &:active {
+        background-color: darken($color-grey-dark-alt, 10);
+      }
+
       @include media-breakpoint-up(lg) {
 
         &:first-child {
@@ -220,6 +224,10 @@
 
         &:hover {
           background-color: #fafafa;
+        }
+
+        &:active {
+          background-color: darken(#fafafa, 10);
         }
       }
 
@@ -402,6 +410,10 @@
 
     &:hover {
       background-color: $color-dark;
+    }
+
+    &:active {
+      background-color: darken($color-dark, 10);
     }
   }
 
