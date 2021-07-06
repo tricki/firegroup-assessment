@@ -22,7 +22,7 @@ fg-product-images {
     }
 
     .current {
-      width: 100%;
+      height: 25rem;
       background-size: 100%;
     }
 
@@ -48,6 +48,12 @@ fg-product-images {
           margin-right: 0;
         }
       }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .current {
+      width: 60%;
     }
   }
 }

@@ -142,7 +142,7 @@
       </div>
     </div>
     <div class="row socket">
-      <div class="col">
+      <div class="col col-auto">
         &copy; Copyright 2018 The Brand
       </div>
       <div class="col right">
