@@ -297,10 +297,23 @@
 .img {
   background: $color-dark top center no-repeat;
   width: 100%;
-  height: 100%;
   // size ususally set by parent row, but not in mobile mode
   min-height: 20rem;
   background-size: 25rem;
+
+  @include media-breakpoint-up(md) {
+    height: 100%;
+  }
+}
+
+.img-floating {
+  @include media-breakpoint-up(md) {
+    position: absolute;
+  }
+}
+
+.img + .img-floating {
+  margin-top: 2rem;
 }
 
 .description {
@@ -322,17 +335,11 @@
     background-size: 19rem;
     background-position: 3rem -5rem;
 
-    position: absolute;
-    top: 9rem;
-    left: 13rem;
-    width: 17rem;
-  }
-}
-
-@include media-breakpoint-down(lg) {
-  .img-floating {
-    // TODO find better solution
-    display: none;
+    @include media-breakpoint-up(md) {
+      top: 9rem;
+      left: 13rem;
+      width: 17rem;
+    }
   }
 }
 
@@ -347,12 +354,13 @@
   .img-floating {
     background-size: 28rem;
     background-position: 66% 73%;
-
-    position: absolute;
-    right: 1.9rem;
-    bottom: -6.2rem;
-    width: 16rem;
     height: 11rem;
+
+    @include media-breakpoint-up(md) {
+      right: 1.9rem;
+      bottom: -6.2rem;
+      width: 16rem;
+    }
   }
 }
 
